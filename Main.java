@@ -8,12 +8,33 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Principal: ");
-        int principal = scanner.nextInt();
-        System.out.print("Annual Interest Rate: ");
-        float annualInterest = scanner.nextFloat();
-        System.out.print("Period (Years): ");
-        byte years = scanner.nextByte();
+        int principal = 0;
+        float annualInterest = 0;
+        byte years = 0;
+
+        while(true) {
+            System.out.print("Principal: ");
+            principal = scanner.nextInt();
+            if(principal >= 1000 && principal <= 1000000)
+                break;
+            System.out.println("Supply a valid principal between 1k and 1M ");
+        }
+
+        while (true) {
+            System.out.print("Annual Interest Rate: ");
+            annualInterest = scanner.nextFloat();
+            if(annualInterest >= 1 && annualInterest <= 10)
+                break;
+            System.out.println("Enter annual interest rate between 1 and 10%");
+        }
+
+        while (true) {
+            System.out.print("Period (Years): ");
+            years = scanner.nextByte();
+            if(years >= 1 && years <= 30)
+                break;
+            System.out.println("Supply years between 1 and 30");
+        }
 
         double mortgage = getMortgage(principal, annualInterest, years);
 
