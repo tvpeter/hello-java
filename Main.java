@@ -1,7 +1,6 @@
 package com.proff;
 
 import java.text.NumberFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
